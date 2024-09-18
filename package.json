@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "axios": "^1.7.7",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
     "framer-motion": "^11.5.4",
     "hamburger-react": "^2.5.1",
     "iconsax-react": "^0.0.8",
@@ -21,12 +23,14 @@
     "react-hook-form": "^7.53.0",
     "react-remove-scroll": "^2.6.0",
     "swiper": "^11.1.14",
+    "uuid": "^10.0.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
     "eslint": "^8",
