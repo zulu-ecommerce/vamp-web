@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.5.4",
     "hamburger-react": "^2.5.1",
     "iconsax-react": "^0.0.8",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "swiper": "^11.1.14"
+    "react-focus-lock": "^2.13.2",
+    "react-hook-form": "^7.53.0",
+    "react-remove-scroll": "^2.6.0",
+    "swiper": "^11.1.14",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",

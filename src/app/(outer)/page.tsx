@@ -7,7 +7,7 @@ import {
   FAVORITE_BRANDS,
   PRODUCT_DISPLAY,
   SHOP_ITEM_DATA,
-} from "../utils/constant";
+} from "../utils/constants";
 import PerksCarousel from "../components/PerksCarousel";
 import { Button } from "../components/elements/Button";
 import MinimalCard from "../components/MinimalCard";

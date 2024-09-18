@@ -6,8 +6,8 @@ import React from "react";
 import clsx from "clsx";
 import "swiper/css";
 
+import { FLAVOUR_DATA } from "../utils/constants";
 import MinimalCardTwo from "./MInimalCardTwo";
-import { FLAVOUR_DATA } from "../utils/constant";
 import { Button } from "./elements/Button";
 
 const FlavourCarousel = () => {

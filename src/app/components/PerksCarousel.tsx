@@ -2,12 +2,12 @@
 import { SwiperSlide, Swiper } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import "swiper/css/navigation";
+import Image from "next/image";
 import React from "react";
 import clsx from "clsx";
 import "swiper/css";
 
-import Image from "next/image";
-import { PERKS_DATA } from "../utils/constant";
+import { PERKS_DATA } from "../utils/constants";
 
 const PerksCarousel = () => {
   return (

@@ -10,6 +10,7 @@ import clsx from "clsx";
 
 import { useComponentVisible } from "../hooks";
 
+import MobileNavbarDrawer from "./MobileNavbarDrawer";
 import logo from "/public/assets/images/logo.svg";
 
 export const Navbar = () => {
@@ -41,11 +42,12 @@ export const Navbar = () => {
       aria-label="Main Navigation"
       className="flex items-center justify-between transition-all top-0 fixed z-[100] w-full"
     >
-      <div className="flex items-center container py-4 bg-primary justify-between transition-all text-tertiary relative z-[100] h-[80px]">
+      <div className="flex items-center container py-4 bg-primary justify-between transition-all text-tertiary relative z-[100] h-[76px]">
         <button
           aria-label={openSideNav ? "close navigation" : "open navigation"}
           className="lg:hidden pr-2 z-[100]"
           ref={dropDownButtonRef}
+          type="button"
         >
           <Hamburger
             toggled={openSideNav}
@@ -84,42 +86,10 @@ export const Navbar = () => {
           </button>
         </div>
         {/* mobile navbar */}
-        <div
-          ref={ref}
-          className={clsx(
-            "fixed top-[71px] left-0 box-border delay-100 transition-all overflow-y-auto overflow-x-hidden text-primary bg-black h-[calc(100vh-71px)] lg:hidden items-center",
-            openSideNav
-              ? "w-screen px-[22px] xs:w-[300px] opacity-100 md:px-10"
-              : "w-0 px-0 "
-          )}
-        >
-          <div className="text-[24px]">
-            {NAV_LINKS.map((link, index) => {
-              return (
-                <Link
-                  key={link.id}
-                  href={link.href}
-                  onClick={() => setOpenSideNav(false)}
-                  className={clsx(
-                    "transition-all duration-100 block text-white-state border-b border-b-primary",
-                    link.href === pathname
-                      ? "text-primary pt-3"
-                      : "py-3 text-white",
-                    index > 0 && "mt-6",
-                    openSideNav ? "opacity-100" : "opacity-0"
-                  )}
-                >
-                  <div className="flex items-center gap-4">
-                    <link.icon size={24} color="#050505" variant="Bold" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
       </div>
 
       {/* <ContactUsModal /> */}
+        <MobileNavbarDrawer openSideNav={openSideNav} ref={ref} setOpenSideNav={setOpenSideNav} />
     </nav>
   );
 };
