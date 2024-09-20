@@ -15,25 +15,22 @@ const MobileNavbarDrawer = ({
   setOpenSideNav,
 }: MobileNavbarDrawerProps) => {
   return (
-    <FocusLock>
-      {/* Always use RemoveScroll but control scroll behavior with 'inert' */}
-      <RemoveScroll
-        enabled={openSideNav}
-        removeScrollBar={false}
-        allowPinchZoom={false}
+    <RemoveScroll
+      enabled={openSideNav}
+      removeScrollBar={false}
+      allowPinchZoom={false}
+    >
+      <div
+        className={clsx(
+          "fixed top-[71px] left-0 box-border delay-100 pt-6 transition-all overflow-y-auto overflow-x-hidden text-primary bg-white-3 h-[calc(100vh-71px)] lg:hidden items-center",
+          openSideNav ? "w-screen opacity-100 md:px-10" : "w-0 px-0 "
+        )}
       >
-        <div
-          className={clsx(
-            "fixed top-[71px] left-0 box-border delay-100 pt-6 transition-all overflow-y-auto overflow-x-hidden text-primary bg-white-3 h-[calc(100vh-71px)] lg:hidden items-center",
-            openSideNav ? "w-screen opacity-100 md:px-10" : "w-0 px-0 "
-          )}
-        >
-          <div>
-            <NavGeneralSearch setOpenSideNav={setOpenSideNav} />
-          </div>
+        <div>
+          <NavGeneralSearch setOpenSideNav={setOpenSideNav} />
         </div>
-      </RemoveScroll>
-    </FocusLock>
+      </div>
+    </RemoveScroll>
   );
 };
 

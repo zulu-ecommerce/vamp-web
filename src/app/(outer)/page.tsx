@@ -171,8 +171,8 @@ export default function Home() {
         <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
           SHOP WITH CONFIDENCE
         </p>
-        <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
-          Delivery in no time⚡️
+        <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4 mb-8">
+        DELIVERY IN NO TIME⚡️
         </h3>
         <p className="mt-4 text-gray-4">
           Waiting can be a drag. That&apos;s why we prioritize fast and
