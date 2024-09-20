@@ -172,7 +172,7 @@ export default function Home() {
           SHOP WITH CONFIDENCE
         </p>
         <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4 mb-8">
-        DELIVERY IN NO TIME⚡️
+          DELIVERY IN NO TIME⚡️
         </h3>
         <p className="mt-4 text-gray-4">
           Waiting can be a drag. That&apos;s why we prioritize fast and
@@ -190,7 +190,6 @@ export default function Home() {
           </div>
         </button>
       </section>
-      
     </div>
   );
 }
