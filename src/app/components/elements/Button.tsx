@@ -16,6 +16,7 @@ interface ButtonProps {
   href?: string | undefined;
   target?: string;
   ariaLabel?: string;
+  size?: "sm" | "md" | "lg";
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -50,7 +51,7 @@ export const Button: React.FC<ButtonProps> = ({
         variant === "primary" && "bg-primary text-white-2 font-[400] px-8 ",
         variant === "secondary" && "bg-white-2 text-primary px-8",
         variant === "outline" &&
-          " bg-black flex items-center text-primary border-primary border justify-center px-8"
+          "flex items-center text-primary border-primary border justify-center px-8"
       )}
       disabled={disabled}
       onClick={onClick}

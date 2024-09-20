@@ -105,7 +105,7 @@ export default function Home() {
       </section>
       <section className="container bg-white-3 py-10">
         <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
-          GET IT All in one BIG house
+          GET IT All IN ONE BIG HOUSE
         </p>
         <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
           ALL YOUR SMOKING NEEDS{" "}

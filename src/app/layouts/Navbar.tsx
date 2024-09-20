@@ -19,7 +19,6 @@ export const Navbar = () => {
     dropDownButtonRef,
     isComponentVisible: openSideNav,
     setIsComponentVisible: setOpenSideNav,
-    ref,
   } = useComponentVisible();
 
   const NAV_LINKS = [
@@ -89,7 +88,7 @@ export const Navbar = () => {
       </div>
 
       {/* <ContactUsModal /> */}
-        <MobileNavbarDrawer openSideNav={openSideNav} ref={ref} setOpenSideNav={setOpenSideNav} />
+        <MobileNavbarDrawer openSideNav={openSideNav} setOpenSideNav={setOpenSideNav} />
     </nav>
   );
 };
