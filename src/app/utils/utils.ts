@@ -20,3 +20,9 @@ export const getFormattedTimeAgoText = (date: string | undefined) => {
   return dayjs().to(dayjs(date))
 }
 
+export const formatAmountWithoutCurrency = (amount: number): string => {
+  return amount?.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+};

@@ -14,6 +14,7 @@ const config: Config = {
       },
       fontFamily: {
         neutrif: "var(--font-neutrif-studio)", // Using a CSS variable
+        screamer: "var(--font-fk-screamer)", // Using a CSS variable
       },
       colors: {
         primary: "#050505",
@@ -28,7 +29,7 @@ const config: Config = {
           3: "#2A2727",
           2: "#171615",
         },
-        red: "#171615",
+        red: "#E34149",
         yellow: "#F3CD58",
         green: "#2CB864",
       },

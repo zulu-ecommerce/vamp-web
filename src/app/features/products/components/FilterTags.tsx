@@ -1,6 +1,5 @@
-import clsx from "clsx";
-import { button, div } from "framer-motion/client";
 import React from "react";
+import clsx from "clsx";
 
 interface FilterTagsProp {
   tags: string[];

@@ -12,6 +12,7 @@ import { useComponentVisible } from "../hooks";
 
 import MobileNavbarDrawer from "./MobileNavbarDrawer";
 import logo from "/public/assets/images/logo.svg";
+import ProfileDrawerModal from "../components/ProfileDrawerModal";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -19,6 +20,13 @@ export const Navbar = () => {
     dropDownButtonRef,
     isComponentVisible: openSideNav,
     setIsComponentVisible: setOpenSideNav,
+  } = useComponentVisible();
+
+  const {
+    ref: profileButtonRef,
+    isComponentVisible: openProfileModal,
+    setIsComponentVisible: setOpenProfileModal,
+    handleClickOnDropDownButton: handleOpenProfileModal,
   } = useComponentVisible();
 
   const NAV_LINKS = [
@@ -80,15 +88,26 @@ export const Navbar = () => {
               </Link>
             );
           })}
-          <button type="button" className="flex centered gap-4 rounded-full">
+          <button
+            onClick={handleOpenProfileModal}
+            type="button"
+            className="flex centered gap-4 rounded-full"
+          >
             <Profile size={24} color="#FAFAFA" variant="Bold" />
           </button>
         </div>
         {/* mobile navbar */}
       </div>
 
-      {/* <ContactUsModal /> */}
-        <MobileNavbarDrawer openSideNav={openSideNav} setOpenSideNav={setOpenSideNav} />
+      <ProfileDrawerModal
+        handleClose={() => setOpenProfileModal(false)}
+        modalOpen={openProfileModal}
+        modalRef={profileButtonRef}
+      />
+      <MobileNavbarDrawer
+        openSideNav={openSideNav}
+        setOpenSideNav={setOpenSideNav}
+      />
     </nav>
   );
 };

@@ -3,6 +3,7 @@
 import Image, { StaticImageData } from "next/image";
 import { Add, Minus } from "iconsax-react";
 import React from "react";
+import Link from "next/link";
 
 interface ShopItemCardProps {
   name: string;
@@ -10,14 +11,17 @@ interface ShopItemCardProps {
   img: StaticImageData;
   price: string;
 }
-const ShopItemCard = ({ name, img, price }: ShopItemCardProps) => {
+const ShopItemCard = ({ name, img, price, id }: ShopItemCardProps) => {
   const [quantity, setQuantity] = React.useState(1);
 
   const increment = () => setQuantity(quantity + 1);
   const decrement = () => setQuantity(quantity - 1);
 
   return (
-    <div className="w-[100%] rounded bg-white-2 py-4 flex-col flex gap-4">
+    <Link
+      href={`/products/${id}`}
+      className="w-[100%] rounded bg-white-2 py-4 flex-col flex gap-4"
+    >
       <Image src={img} alt="product" className="w-[80%] mx-auto h-auto" />
 
       <div className="px-4">
@@ -45,7 +49,7 @@ const ShopItemCard = ({ name, img, price }: ShopItemCardProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

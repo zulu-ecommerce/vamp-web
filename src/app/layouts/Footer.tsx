@@ -52,7 +52,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="container bg-primary py-10 text-sm text-white">
+    <footer className="container bg-primary pt-10 text-sm text-white overflow-hidden">
       <p>© Vamp.com • 2024 All Rights Reserved</p>
       <div className="mt-10">
         {NAV_LINKS.map((link) => {
@@ -72,7 +72,7 @@ const Footer = () => {
           );
         })}
       </div>
-      <div className="mt-10 space-y-4">
+      <div className="my-10 space-y-4">
         <p className="">Admiralty Mall, Shop 2,</p>
         <p className="">Admiralty Rd, Eti-Osa, Lekki,</p>
         <p className="">Lagos.</p>
@@ -81,7 +81,7 @@ const Footer = () => {
       <Image
         src={logo}
         alt="Vamp-logo"
-        className="mt-10"
+        className="-mb-6"
         style={{ width: "100%", height: "auto" }}
       />
     </footer>

@@ -113,16 +113,16 @@ export const PERKS_DATA = [
 ];
 
 export const FAVORITE_BRANDS = [
-  { img: rizla, id: "1" },
-  { img: futurola, id: "2" },
-  { img: backwoodsLogo, id: "3" },
-  { img: raw, id: "4" },
-  { img: bou, id: "5" },
-  { img: ocb, id: "6" },
-  { img: smok, id: "7" },
-  { img: voopoo, id: "8" },
-  { img: lostMary, id: "9" },
-  { img: blazySuzan, id: "10" },
+  { img: rizla, id: "1", name: "Rizla" },
+  { img: futurola, id: "2", name: "Futurola" },
+  { img: backwoodsLogo, id: "3", name: "Backwoods" },
+  { img: raw, id: "4", name: "Raw" },
+  { img: bou, id: "5", name: "Bou" },
+  { img: ocb, id: "6", name: "OCB" },
+  { img: smok, id: "7", name: "Smok" },
+  { img: voopoo, id: "8", name: 'Voopoo' },
+  { img: lostMary, id: "9", name: 'LostMary' },
+  { img: blazySuzan, id: "10", name: 'BlazySuzan' },
 ];
 
 export const FLAVOUR_DATA = [

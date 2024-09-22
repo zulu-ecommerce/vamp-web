@@ -17,24 +17,22 @@ interface ModalProps {
   variant?: "right" | "middle" | "full" | "left";
   children: React.ReactNode;
   modalRef?: React.RefObject<HTMLDivElement>;
-  backDropColor?: string
+  backDropClass?: string;
 }
 
 const backdropVariants = {
-  visible: { opacity: 1, transition: { duration: 0.3 } },
-  hidden: { opacity: 0, transition: { duration: 0.3 } },
+  visible: { opacity: 1, transition: { duration: 0.1 } },
+  hidden: { opacity: 0, transition: { duration: 0.1 } },
 };
 
 const animationMiddleVariants: Variants = {
   hidden: {
     y: "50%",
-    opacity: 0,
-    transition: { duration: 0.3, type: "spring", stiffness: 70 },
+    transition: { duration: 0.1, type: "spring", stiffness: 80 },
   },
   visible: {
-    y: "0",
-    opacity: 1,
-    transition: { duration: 0.3, type: "spring", stiffness: 30 },
+    y: "0%",
+    transition: { duration: 0.1, type: "spring", stiffness: 80 },
   },
 };
 
@@ -71,7 +69,7 @@ export const Modal: React.FC<ModalProps> = ({
   className = "",
   children,
   modalRef,
-  backDropColor = "bg-black bg-opacity-50",
+  backDropClass = "bg-black bg-opacity-50",
 }) => {
   const [isBrowser, setIsBrowser] = React.useState(false);
 
@@ -112,7 +110,10 @@ export const Modal: React.FC<ModalProps> = ({
               initial="hidden"
               animate="visible"
               exit={backdropVariants.hidden}
-              className={clsx("fixed inset-0 z-50 overflow-y-auto", backDropColor)}
+              className={clsx(
+                "fixed inset-0 z-[500] overflow-y-auto",
+                backDropClass
+              )}
             >
               <div className="fixed inset-0 overflow-y-auto overflow-x-hidden">
                 <motion.div

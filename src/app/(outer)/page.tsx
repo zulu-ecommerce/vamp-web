@@ -49,9 +49,9 @@ export default function Home() {
         <div className="mt-14">
           <div className="flex items-center gap-4 my-6 justify-center">
             <Image src={trophy} alt="line" className="max-w-[24px]" />
-            <h3 className="font-neutrif font-normal">
+            <h2 className="font-neutrif font-normal">
               Nigeria’s No1. Smoke Shop
-            </h3>
+            </h2>
           </div>
           <PerksCarousel />
         </div>
@@ -60,9 +60,9 @@ export default function Home() {
         <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
           SHOP YOUR FAVORITE BRANDS
         </p>
-        <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
+        <h2 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
           BUY BY BRAND
-        </h3>
+        </h2>
         <p className="mt-4">
           We have also made it easy for you to shop your favorite brands in our
           store. Shop Vamp <strong>&quot;by brand&quot;</strong>
@@ -71,12 +71,12 @@ export default function Home() {
           {FAVORITE_BRANDS.map((brand) => (
             <div
               key={brand.id}
-              className="bg-white w-full px-4 rounded justify-center flex items-center h-[168px] group transition-all"
+              className="bg-white w-full px-4 rounded justify-center flex items-center h-[116px] group transition-all"
             >
               <Image
                 src={brand.img}
                 alt="reboot-monkey-logo"
-                className=" invert transition-all w-full max-w-[110px] h-auto]"
+                className=" invert transition-all w-full max-w-[110px] h-auto"
               />
             </div>
           ))}
@@ -91,9 +91,9 @@ export default function Home() {
           <p className="bg-gray-3 font-bold px-3 rounded py-1 text-[13px] w-fit">
             EXPERIENCE UNIQUE FLAVORS
           </p>
-          <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
+          <h2 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
             FLAVOR INFUSED VAPES
-          </h3>
+          </h2>
           <p className="mt-4">
             We have the most flavorful vapes. Discover some of most our popular
             flavor infused vapes.
@@ -107,9 +107,9 @@ export default function Home() {
         <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
           GET IT All IN ONE BIG HOUSE
         </p>
-        <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
+        <h2 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
           ALL YOUR SMOKING NEEDS{" "}
-        </h3>
+        </h2>
         <p className="mt-4">
           We have also made it easy for you to shop your favorite brands in our
           store. Shop Vamp <strong>&quot;by brand&quot;</strong>
@@ -136,9 +136,9 @@ export default function Home() {
         <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
           LOCATED IN THE HEART OF LAGOS
         </p>
-        <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
+        <h2 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
           GIVE US A VISIT IN LAGOS
-        </h3>
+        </h2>
         <p className="mt-4">
           Craving a premium smoke experience that goes beyond the web? Head down
           to our Lagos store and discover a world of exceptional smoking
@@ -171,9 +171,9 @@ export default function Home() {
         <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
           SHOP WITH CONFIDENCE
         </p>
-        <h3 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4 mb-8">
+        <h2 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4 mb-8">
           DELIVERY IN NO TIME⚡️
-        </h3>
+        </h2>
         <p className="mt-4 text-gray-4">
           Waiting can be a drag. That&apos;s why we prioritize fast and
           efficient delivery. Get your essential smoking accessories quickly so

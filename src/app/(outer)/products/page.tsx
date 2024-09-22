@@ -1,13 +1,16 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { Filter, SearchNormal1 } from "iconsax-react";
+import { SearchNormal1 } from "iconsax-react";
 import React from "react";
-import FilterTags from "@/app/features/products/components/FilterTags";
+
 import ProductSection from "@/app/features/products/components/ProductSection";
-import BottomSheetModal from "@/app/features/products/components/BottomSheetModal";
+import BrandFilter from "@/app/features/products/components/BrandFilter";
+import PriceFilter from "@/app/features/products/components/PriceFilter";
+import FilterTags from "@/app/features/products/components/FilterTags";
 import { useComponentVisible } from "@/app/hooks";
 
 const Products = () => {
+  const [brandFilterArray, setBrandFilterArray] = React.useState<string[]>([]);
   const searchParams = useSearchParams();
   const search = searchParams.get("type") || "All Products";
   const {
@@ -15,6 +18,13 @@ const Products = () => {
     isComponentVisible: isPriceFilterVisible,
     setIsComponentVisible: setIsPriceFilterVisible,
     handleClickOnDropDownButton: handleClickOnPriceFilterButton,
+  } = useComponentVisible();
+
+  const {
+    ref: brandFilterRef,
+    isComponentVisible: isBrandFilterVisible,
+    setIsComponentVisible: setIsBrandFilterVisible,
+    handleClickOnDropDownButton: handleClickOnBrandFilterButton,
   } = useComponentVisible();
 
   const FILTER_TAGS = [
@@ -34,6 +44,14 @@ const Products = () => {
     "Stash Jars",
     "Odor Control",
   ];
+
+  const handleBrandFilter = (brand: string) => {
+    if (brandFilterArray.includes(brand)) {
+      setBrandFilterArray((prev) => prev.filter((item) => item !== brand));
+    } else {
+      setBrandFilterArray((prev) => [...prev, brand]);
+    }
+  };
 
   return (
     <div className="bg-white-3">
@@ -64,6 +82,7 @@ const Products = () => {
           </p>
           <div className="flex items-center gap-4">
             <button
+              onClick={handleClickOnBrandFilterButton}
               type="button"
               className="underline underline-offset-2 text-[13px] text-black"
             >
@@ -80,9 +99,16 @@ const Products = () => {
         </div>
         <ProductSection />
       </section>
-      <BottomSheetModal
-        modalOpen={isPriceFilterVisible}
+      <BrandFilter
+        handleClose={() => setIsBrandFilterVisible(false)}
+        modalOpen={isBrandFilterVisible}
+        modalRef={brandFilterRef}
+        handleBrandFilter={handleBrandFilter}
+        brandFilterArray={brandFilterArray}
+      />
+      <PriceFilter
         handleClose={() => setIsPriceFilterVisible(false)}
+        modalOpen={isPriceFilterVisible}
         modalRef={priceFilterRef}
       />
     </div>

@@ -7,30 +7,31 @@ interface BottomSheetModalProps {
   modalOpen: boolean;
   handleClose: () => void;
   modalRef: React.RefObject<HTMLDivElement>;
+  children: React.ReactNode;
+  title: string;
 }
 const BottomSheetModal = ({
   modalOpen,
   handleClose,
   modalRef,
+  children,
+  title,
 }: BottomSheetModalProps) => {
   return (
     <Modal
-      backDropColor="bg-none"
+      backDropClass="bg-none"
       variant="middle"
       className={clsx(
-        "w-full md:w-[746px] bottom-0 border-t border-t-black max-h-[300dvh] h-[282.7px] mx-auto bg-white bg-white-200 px-6 overflow-scroll fixed"
+        "w-full md:w-[746px] bottom-0 border-t border-t-black max-h-[282.7px] mx-auto bg-white fixed"
       )}
       showDialog={modalOpen}
       closeModal={handleClose}
       modalRef={modalRef}
     >
-      <div className="relative">
-        <div className="pb-4 flex bg-white items-center justify-between pt-6 sticky top-0">
-          <h3 className="font-medium text-[20px] justify-between text-black">
-            Filter
-          </h3>
-        </div>
+      <div className="px-6 h-[73px] flex items-center border-b bg-white-2 border-b-black">
+        <h2 className="uppercase text-[40px] leading-[22.6px]">{title}</h2>
       </div>
+      {children}
     </Modal>
   );
 };
