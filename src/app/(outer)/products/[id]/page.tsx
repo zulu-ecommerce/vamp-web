@@ -49,7 +49,7 @@ const Page = () => {
           <p className="text-gray-4">{PRODUCT_DETAILS.description}</p>
         </div>
       </div>
-      <div className=" bg-black bottom-0 h-[70px] sticky">
+      <div className=" bg-black bottom-0 h-[70px] flex items-center sticky">
         <div className=" container  flex items-center justify-between">
           <p className="font-screamer text-white text-[40px] font-bold">₦15, 700.00</p>
           <ProductDetailsQuantity quantity={PRODUCT_DETAILS.quantity} />

@@ -19,7 +19,7 @@ const ProductDetailsQuantity = ({
   const decrement = () => setQuantity(quantity - 1);
 
   return (
-    <div className="text-[18px] font-bold flex mt-4 items-center justify-between gap-3 bg-gray-2 p-2 rounded ">
+    <div className="text-[18px] font-bold flex items-center justify-between gap-3 bg-gray-2 p-2 rounded ">
       <button
         onClick={decrement}
         type="button"
