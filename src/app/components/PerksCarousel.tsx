@@ -9,41 +9,52 @@ import "swiper/css";
 
 import { PERKS_DATA } from "../utils/constants";
 
-const PerksCarousel = () => {
+export const PerksCarousel = () => {
   return (
-    <div className="">
-      <Swiper
-        slidesPerView={"auto"}
-        spaceBetween={20}
-        navigation={false}
-        rewind={true}
-        freeMode={true}
-        modules={[FreeMode]}
-        className="mySwiper h-[233px]"
-      >
-        {PERKS_DATA?.map((card, index) => (
-          <SwiperSlide
-            key={card.id}
-            className={clsx(
-              "rounded-lg max-w-[289px] sm:max-w-[289px]",
-              index + 1 === PERKS_DATA.length && "pr-[20px]",
-              index === 0 && "pl-[20px]"
-            )}
-          >
-            <div className=" bg-white-2 py-6 px-6 rounded min-h-[210px]">
-              <Image
-                src={card.icon}
-                alt="icon"
-                className="max-w-[24px] h-auto"
-              />
-              <p className="text-[20px] font-bold mt-4">{card.title}</p>
-              <p className="mt-3">{card.description}</p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <Swiper
+      slidesPerView={"auto"}
+      spaceBetween={20}
+      navigation={false}
+      rewind={true}
+      freeMode={true}
+      modules={[FreeMode]}
+      className="mySwiper h-[233px]"
+    >
+      {PERKS_DATA?.map((card, index) => (
+        <SwiperSlide
+          key={card.id}
+          className={clsx(
+            "rounded-lg max-w-[289px] sm:max-w-[289px]",
+            index + 1 === PERKS_DATA.length && "pr-[20px]",
+            index === 0 && "pl-[20px]"
+          )}
+        >
+          <div className=" bg-white-2 py-6 px-6 rounded min-h-[210px]">
+            <Image src={card.icon} alt="icon" className="max-w-[24px] h-auto" />
+            <p className="text-[20px] font-bold mt-4">{card.title}</p>
+            <p className="mt-3">{card.description}</p>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
-export default PerksCarousel;
+export const PerksSection = () => {
+  return (
+    <section className="py-10 container grid grid-cols-3 gap-4">
+      {PERKS_DATA?.map((card, index) => (
+        <div
+          key={card.id}
+          className={clsx("rounded-lg")}
+        >
+          <div className=" bg-white-2 py-6 px-6 rounded min-h-[210px]">
+            <Image src={card.icon} alt="icon" className="max-w-[24px] h-auto" />
+            <p className="text-[20px] font-bold mt-4">{card.title}</p>
+            <p className="mt-3">{card.description}</p>
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+};

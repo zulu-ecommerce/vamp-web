@@ -8,26 +8,41 @@ import {
   PRODUCT_DISPLAY,
   SHOP_ITEM_DATA,
 } from "../utils/constants";
-import PerksCarousel from "../components/PerksCarousel";
+import { PerksCarousel, PerksSection } from "../components/PerksCarousel";
 import { Button } from "../components/elements/Button";
 import MinimalCard from "../components/MinimalCard";
 
 import locationColored from "../../../public/assets/icons/locationColored.svg";
 import trophy from "../../../public/assets/icons/trophy.png";
 import FlavourCarousel from "../components/FlavourCarousel";
+import SlideIndicator from "../components/SlideIndicator";
 
 export default function Home() {
   return (
     <div>
       <section className="bg-gradient-to-b from-[#F6EDEA] to-[#DFEBE9]">
-        <div className="container pt-12">
-          <h1 className="text-[100px] 2xs:text-[120px] leading-[105px] mx-auto">
-            SMOKE LIKE ROYALTY.
-          </h1>
-          <p className="text-[24px] text-primary mt-6 md:w-[668px]">
-            Smoking Good Luxury and Quality.
+        <div className="container pt-12 flex flex-col gap=10 lg:flex-row items-start justify-between">
+          <div className="lg:w-[691px]">
+            <h1 className="text-[100px] lg:text-[215px] 2xs:text-[120px] leading-[105px] lg:leading-[172px] mx-auto">
+              SMOKE LIKE ROYALTY.
+            </h1>
+            <p className="text-[24px] hidden lg:block text-primary mt-6 lg:w-[668px]">
+              Smoke With Luxury and Quality Products
+            </p>
+            <p className="hidden lg:block text-gray-4 mt-4 w-[513px]">
+              We aim at providing you with the smoking experience that you
+              solely deserve. Explore our catalogue of your favorite smoking
+              accessories.
+            </p>
+            <Button className="text-base w-[506px] font-bold hidden lg:flex items-center mt-6 justify-between">
+              See more products{" "}
+              <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
+            </Button>
+          </div>
+          <p className="text-[24px] lg:hidden text-primary mt-6 lg:w-[668px]">
+            Smoke With Luxury and Quality Products
           </p>
-          <div className="grid grid-cols-2 gap-[18px] mt-8">
+          <div className="grid grid-cols-2 gap-[18px] mt-8 lg:mt-0">
             {PRODUCT_DISPLAY.map((product) => (
               <MinimalCard
                 id={product.id}
@@ -37,41 +52,57 @@ export default function Home() {
               />
             ))}
           </div>
-          <p className="text-[13px] text-gray-4 mt-4 md:w-[668px] mx-auto">
+          <p className="text-[13px] lg:hidden text-gray-4 mt-4 md:w-[668px] mx-auto">
             We aim at providing you with the smoking experience that you solely
             deserve. Explore our catalogue of your favorite smoking accessories.
           </p>
-          <Button className="text-base w-full font-bold flex items-center mt-6 justify-between">
+          <Button className="text-base w-full font-bold flex lg:hidden items-center mt-6 justify-between">
             See more products{" "}
             <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
           </Button>
         </div>
-        <div className="mt-14">
-          <div className="flex items-center gap-4 my-6 justify-center">
-            <Image src={trophy} alt="line" className="max-w-[24px]" />
-            <h2 className="font-neutrif font-normal">
-              Nigeria’s No1. Smoke Shop
-            </h2>
+        <div className="mt-14 lg:mt-4">
+          <div className="container flex items-center justify-between">
+            <div className="flex items-center gap-4 my-6 justify-center lg:justify-start">
+              <Image src={trophy} alt="line" className="max-w-[24px]" />
+              <h2 className="font-neutrif font-normal">
+                Nigeria’s No1. Smoke Shop
+              </h2>
+            </div>
+            <SlideIndicator />
           </div>
-          <PerksCarousel />
+          <div className="bg-white-3 lg:bg-transparent py-10">
+            <div className="lg:hidden">
+              <PerksCarousel />
+            </div>
+            <div className="hidden lg:block">
+              <PerksSection />
+            </div>
+          </div>
         </div>
       </section>
-      <section className="container py-10 bg-white-3">
-        <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
-          SHOP YOUR FAVORITE BRANDS
-        </p>
-        <h2 className="text-[100px] 2xs:text-[120px] leading-[100px] mt-4">
-          BUY BY BRAND
-        </h2>
-        <p className="mt-4">
-          We have also made it easy for you to shop your favorite brands in our
-          store. Shop Vamp <strong>&quot;by brand&quot;</strong>
-        </p>
-        <div className="mt-10 grid grid-cols-2 items-center gap-4">
+      <section className="container lg:flex lg:justify-between py-10 bg-white-3 lg:bg-white">
+        <div className="lg:w-[415px]">
+          <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
+            SHOP YOUR FAVORITE BRANDS
+          </p>
+          <h2 className="text-[100px] 2xs:text-[120px] lg:text-[190px] leading-[100px] lg:leading-[152px] mt-4">
+            BUY BY BRAND
+          </h2>
+          <p className="mt-4">
+            We have also made it easy for you to shop your favorite brands in
+            our store. Shop Vamp <strong>&quot;by brand&quot;</strong>
+          </p>
+          <Button className="text-base w-full font-bold hidden lg:flex items-center mt-6 justify-between">
+            See more brands{" "}
+            <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
+          </Button>
+        </div>
+        <div className="mt-10 lg:mt-0 grid grid-cols-2 lg:grid-cols-3 items-center gap-4">
           {FAVORITE_BRANDS.map((brand) => (
             <div
               key={brand.id}
-              className="bg-white w-full px-4 rounded justify-center flex items-center h-[116px] group transition-all"
+              className="bg-white w-full px-4 rounded justify-center flex items-center h-[116px] group transition-all lg:border lg:"
             >
               <Image
                 src={brand.img}
@@ -81,7 +112,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Button className="text-base w-full font-bold flex items-center mt-6 justify-between">
+        <Button className="text-base w-full font-bold flex lg:hidden items-center mt-6 justify-between">
           See more brands{" "}
           <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
         </Button>

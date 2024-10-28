@@ -47,12 +47,12 @@ export const Navbar = () => {
   return (
     <nav
       aria-label="Main Navigation"
-      className="flex items-center justify-between transition-all top-0 fixed z-[100] w-full"
+      className="flex items-center justify-between transition-all bg-primary  top-0 h-[81px] fixed z-[100] w-full"
     >
-      <div className="flex items-center container py-4 bg-primary justify-between transition-all text-tertiary relative z-[100] h-[76px]">
+      <div className="flex items-center container py-4 h-full justify-between transition-all text-tertiary relative z-[100]">
         <button
           aria-label={openSideNav ? "close navigation" : "open navigation"}
-          className="lg:hidden pr-2 z-[100]"
+          className="pr-2 z-[100]"
           ref={dropDownButtonRef}
           type="button"
         >

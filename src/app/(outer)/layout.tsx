@@ -12,7 +12,7 @@ export default function Layout({
       <div className="bg-white">
         {/* <ContactUsModalProvider> */}
         <Navbar />
-        <div className="pt-[80px] lg:pt-[100px]">
+        <div className="pt-[81px]">
           <div id="modal-root" />
         </div>
         {children}

@@ -33,6 +33,9 @@ const config: Config = {
         yellow: "#F3CD58",
         green: "#2CB864",
       },
+      borderColor: {
+        DEFAULT: "#E3E0DE",
+      },
       screens: {
         xs: "440px",
         "2xs": "375px",
