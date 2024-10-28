@@ -66,7 +66,7 @@ const NavGeneralSearch = ({ setOpenSideNav }: NavGeneralSearchProps) => {
           </Link>
         ))}
       </div>
-      <div className="flex items-center px-[22px] h-[68px] bg-gray-7 justify-between mt-2">
+      <div className="flex items-center px-[22px] w-full h-[68px] bg-gray-7 justify-between mt-2">
         <p className="text-primary/50">© 2024 • All Rights Reserved</p>
         <div className="flex items-center gap-1">
           {SOCIAL_LINKS.map((link) => (

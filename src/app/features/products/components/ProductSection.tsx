@@ -1,7 +1,8 @@
-import { SHOP_ITEM_DATA } from "@/app/utils/constants";
 import React from "react";
+
 import ShopItemCard from "../../shop/components/ShopItemCard";
 import { Button } from "@/app/components/elements/Button";
+import { SHOP_ITEM_DATA } from "@/app/utils/constants";
 
 const ProductSection = () => {
   return (

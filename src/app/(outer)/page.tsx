@@ -42,7 +42,7 @@ export default function Home() {
           <p className="text-[24px] lg:hidden text-primary mt-6 lg:w-[668px]">
             Smoke With Luxury and Quality Products
           </p>
-          <div className="grid grid-cols-2 gap-[18px] mt-8 lg:mt-0">
+          <div className="grid grid-cols-2 gap-[18px] mt-8 lg:mt-0 w-full lg:w-[395px]">
             {PRODUCT_DISPLAY.map((product) => (
               <MinimalCard
                 id={product.id}
