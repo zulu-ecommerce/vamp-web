@@ -1,6 +1,6 @@
 import React from "react";
 
-import BottomSheetModal from "@/app/components/BottomSheetModal";
+import BottomSheetModal from "@/app/components/modals/BottomSheetModal";
 import SliderInput from "@/app/components/form/SliderInput";
 import { Button } from "@/app/components/elements/Button";
 

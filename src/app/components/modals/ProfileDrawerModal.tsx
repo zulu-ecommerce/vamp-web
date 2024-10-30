@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-import BottomSheetModal from "@/app/components/BottomSheetModal";
+import BottomSheetModal from "@/app/components/modals/BottomSheetModal";
 import { Button } from "@/app/components/elements/Button";
 
-import profile from "../../../public/assets/icons/profile.svg";
+import profile from "../../../../public/assets/icons/profile.svg";
 
 interface ProfileDrawerModalProps {
   handleClose: () => void;
@@ -30,12 +30,12 @@ const ProfileDrawerModal = ({
         <p className="text-black">OLOLADEMI ASAKE</p>
       </div>
       <div className="space-y-2 px-6 mb-4">
-          <Button variant="outline" className="flex-1 w-full block">
-            My orders
-          </Button>
-          <Button variant="danger" className="w-full block flex-1">
-            Logout
-          </Button>
+        <Button variant="outline" className="flex-1 w-full block">
+          My orders
+        </Button>
+        <Button variant="danger" className="w-full block flex-1">
+          Logout
+        </Button>
       </div>
     </BottomSheetModal>
   );

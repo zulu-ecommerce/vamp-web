@@ -1,4 +1,4 @@
-import BottomSheetModal from "@/app/components/BottomSheetModal";
+import BottomSheetModal from "@/app/components/modals/BottomSheetModal";
 import { Button } from "@/app/components/elements/Button";
 import { FAVORITE_BRANDS } from "@/app/utils/constants";
 

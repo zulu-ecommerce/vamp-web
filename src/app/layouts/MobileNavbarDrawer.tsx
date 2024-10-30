@@ -38,13 +38,14 @@ export const MobileNavbarDrawer = ({
 export const DesktopNavbar = ({
   openSideNav,
   setOpenSideNav,
-  ref,
 }: MobileNavbarDrawerProps) => {
   return (
     <div
       className={clsx(
-        "absolute delay-100 pt-6 transition-all overflow-y-auto overflow-x-hidden text-primary bg-white-3 left-0 hidden lg:block items-center top-[82px] max-h-[661px] h-[calc(100vh-100px)]",
-        openSideNav ? "w-[428px] opacity-100 md:px-10" : "w-0 px-0 "
+        "absolute delay-100 pt-6 transition-all overflow-y-auto overflow-x-hidden text-primary bg-white-3 left-0 hidden lg:block items-center top-[81px] max-h-[862px] h-[calc(100vh-100px)] ",
+        openSideNav
+          ? "w-[428px] opacity-100 border border-primary "
+          : "w-0 px-0"
       )}
     >
       <div>

@@ -8,10 +8,11 @@ import Link from "next/link";
 import React from "react";
 import clsx from "clsx";
 
-import ProfileDrawerModal from "../components/ProfileDrawerModal";
 import { MobileNavbarDrawer, DesktopNavbar } from "./MobileNavbarDrawer";
+import ProfileDrawerModal from "../components/modals/ProfileDrawerModal";
 import logo from "/public/assets/images/logo.svg";
 import { useComponentVisible } from "../hooks";
+import { CartModal } from "../features/cart/components/CartModal";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -35,7 +36,14 @@ export const Navbar = () => {
     handleClickOnDropDownButton: handleOpenProfileModal,
   } = useComponentVisible();
 
-  const NAV_LINKS = [
+  const {
+    ref: cartRef,
+    isComponentVisible: openCartModal,
+    setIsComponentVisible: setOpenCartModal,
+    handleClickOnDropDownButton: handleOpenCartModal,
+  } = useComponentVisible();
+
+  const BUTTON_ACTIONS = [
     // {
     //   name: "",
     //   id: "1",
@@ -46,7 +54,7 @@ export const Navbar = () => {
       name: "",
       id: "2",
       icon: Bag,
-      href: "/cart",
+      onclick: handleOpenCartModal,
     },
   ];
 
@@ -109,15 +117,17 @@ export const Navbar = () => {
             />
           </Link>
           <div className="text-white items-center flex gap-2 text-tertiary">
-            {NAV_LINKS.map((link) => {
+            {BUTTON_ACTIONS.map((action) => {
               return (
-                <Link
-                  href={link.href}
+                <button
+                  type="button"
+                  onClick={action.onclick}
+                  aria-label={action.name}
                   className="flex centered gap-4 min-w-[44px] w-[44px] rounded-full aspect-square bg-primary bg-opacity-[0.03]"
-                  key={link.id}
+                  key={action.id}
                 >
-                  <link.icon size={24} color="#FAFAFA" variant="Bold" />
-                </Link>
+                  <action.icon size={24} color="#FAFAFA" variant="Bold" />
+                </button>
               );
             })}
             <button
@@ -135,6 +145,7 @@ export const Navbar = () => {
             ref={desktopRef}
           />
         </div>
+
         <ProfileDrawerModal
           handleClose={() => setOpenProfileModal(false)}
           modalOpen={openProfileModal}
@@ -143,6 +154,11 @@ export const Navbar = () => {
         <MobileNavbarDrawer
           openSideNav={openSideNav}
           setOpenSideNav={setOpenSideNav}
+        />
+        <CartModal
+          modalRef={cartRef}
+          modalOpen={openCartModal}
+          setModalOpen={setOpenCartModal}
         />
       </div>
     </nav>

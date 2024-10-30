@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import logo from "/public/assets/images/logo.svg";
+import logo2 from "/public/assets/images/logo2.svg";
+import clsx from "clsx";
 
 const Footer = () => {
   const NAV_LINKS = [
@@ -52,38 +53,52 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="container bg-primary pt-10 text-sm text-white overflow-hidden">
-      <p>© Vamp.com • 2024 All Rights Reserved</p>
-      <div className="mt-10">
-        {NAV_LINKS.map((link) => {
-          return (
-            <Link className="mt-3 block" key={link.id} href={link.href}>
-              {link.name}
-            </Link>
-          );
-        })}
+    <footer className=" bg-primary ">
+      <div className="pt-10 container text-sm text-white overflow-hidden">
+        <div className="lg:flex lg:items-start lg:justify-between lg:mb-20">
+          <p>© Vamp.com • 2024 All Rights Reserved</p>
+          <div className="lg:flex lg:items-start gap-20">
+            <div className="mt-10 lg:mt-0">
+              {NAV_LINKS.map((link, index) => {
+                return (
+                  <Link
+                    className={clsx("block", index > 0 && "mt-3")}
+                    key={link.id}
+                    href={link.href}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="mt-10 lg:mt-0">
+              {SOCIAL_LINKS.map((link, index) => {
+                return (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    className={clsx("block", index > 0 && "mt-3")}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="my-10 lg:mt-0 space-y-4">
+              <p className="">Admiralty Mall, Shop 2,</p>
+              <p className="">Admiralty Rd, Eti-Osa, Lekki,</p>
+              <p className="">Lagos.</p>
+              <p className="">Nigeria.</p>
+            </div>
+          </div>
+        </div>
+        <Image
+          src={logo2}
+          alt="Vamp-logo"
+          className=""
+          style={{ width: "100%", height: "auto" }}
+        />
       </div>
-      <div className="mt-10">
-        {SOCIAL_LINKS.map((link) => {
-          return (
-            <Link key={link.id} href={link.href} className="mt-3 block">
-              {link.name}
-            </Link>
-          );
-        })}
-      </div>
-      <div className="my-10 space-y-4">
-        <p className="">Admiralty Mall, Shop 2,</p>
-        <p className="">Admiralty Rd, Eti-Osa, Lekki,</p>
-        <p className="">Lagos.</p>
-        <p className="">Nigeria.</p>
-      </div>
-      <Image
-        src={logo}
-        alt="Vamp-logo"
-        className="-mb-6"
-        style={{ width: "100%", height: "auto" }}
-      />
     </footer>
   );
 };

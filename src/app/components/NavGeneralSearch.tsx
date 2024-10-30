@@ -41,7 +41,7 @@ const NavGeneralSearch = ({ setOpenSideNav }: NavGeneralSearchProps) => {
 
   return (
     <div className="">
-      <div className="px-[22px]">
+      <div className="px-[22px] relative">
         <div className="flex items-center h-[40px] w-full p-1 border border-primary">
           <input
             type="text"
@@ -54,7 +54,7 @@ const NavGeneralSearch = ({ setOpenSideNav }: NavGeneralSearchProps) => {
         </div>
       </div>
 
-      <div className="w-full font-normal space-y-3 h-[calc(100dvh-248px)] mt-8 overflow-auto pl-[22px]">
+      <div className="w-full font-normal space-y-3 max-h-[calc(100dvh-248px)] lg:max-h-[calc(100vh-280px)] lg:h-[680px] mt-8 overflow-auto pl-[22px]">
         {NAV_LINKS.map((link) => (
           <Link
             onClickCapture={handleCloseNav}
