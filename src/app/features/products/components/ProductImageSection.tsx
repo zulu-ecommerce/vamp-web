@@ -33,28 +33,26 @@ const ProductImageSection = () => {
     setIsActiveVariant(variant.toLowerCase());
   };
   return (
-    <div className="py-6">
-      <div className="container">
-        <div className="flex justify-center">
-          <Image src={voopooCart} alt="product" className=" w-[247px] h-auto" />
-        </div>
-        <div className="flex items-center gap-4 justify-between">
-          {COLOR_VARIANTS.map((color) => (
-            <button
-              onClick={() => handleSelectActiveVariant(color.name)}
-              key={color.id}
-              className={clsx(
-                "rounded-[1px] py-1 px-2 text-xs border border-primary uppercase whitespace-nowrap",
-                isActiveVariant === color.name.toLowerCase()
-                  ? "bg-primary text-white-2 "
-                  : "bg-white-2 text-primary"
-              )}
-              type="button"
-            >
-              {color.name}
-            </button>
-          ))}
-        </div>
+    <div className="">
+      <div className="flex justify-center">
+        <Image src={voopooCart} alt="product" className=" w-[247px] h-auto" />
+      </div>
+      <div className="flex items-center gap-2 justify-center flex-wrap">
+        {COLOR_VARIANTS.map((color) => (
+          <button
+            onClick={() => handleSelectActiveVariant(color.name)}
+            key={color.id}
+            className={clsx(
+              "rounded-[1px] py-1 px-2 text-xs border border-primary uppercase whitespace-nowrap",
+              isActiveVariant === color.name.toLowerCase()
+                ? "bg-primary text-white-2 "
+                : "bg-white-2 text-primary"
+            )}
+            type="button"
+          >
+            {color.name}
+          </button>
+        ))}
       </div>
     </div>
   );

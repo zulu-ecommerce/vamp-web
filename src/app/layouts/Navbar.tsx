@@ -10,9 +10,9 @@ import clsx from "clsx";
 
 import { MobileNavbarDrawer, DesktopNavbar } from "./MobileNavbarDrawer";
 import ProfileDrawerModal from "../components/modals/ProfileDrawerModal";
+import { CartModal } from "../features/cart/components/CartModal";
 import logo from "/public/assets/images/logo.svg";
 import { useComponentVisible } from "../hooks";
-import { CartModal } from "../features/cart/components/CartModal";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -142,7 +142,6 @@ export const Navbar = () => {
           <DesktopNavbar
             openSideNav={openDesktopNav}
             setOpenSideNav={setOpenDesktopNav}
-            ref={desktopRef}
           />
         </div>
 

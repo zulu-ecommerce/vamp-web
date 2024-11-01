@@ -32,7 +32,6 @@ import bicBlackCart from "../../../public/assets/images/bicBlackCart.png";
 import voopooCart from "../../../public/assets/images/voopooCart.png";
 import rizlaCart from "../../../public/assets/images/rizlaCart.png";
 
-
 export const METHOD = {
   POST: "POST",
   GET: "GET",
@@ -55,7 +54,6 @@ export const OPTIONS_VALIDATION = array()
     })
   )
   .required("Required");
-
 
 export const PRODUCT_DISPLAY = [
   {
@@ -120,9 +118,9 @@ export const FAVORITE_BRANDS = [
   { img: bou, id: "5", name: "Bou" },
   { img: ocb, id: "6", name: "OCB" },
   { img: smok, id: "7", name: "Smok" },
-  { img: voopoo, id: "8", name: 'Voopoo' },
-  { img: lostMary, id: "9", name: 'LostMary' },
-  { img: blazySuzan, id: "10", name: 'BlazySuzan' },
+  { img: voopoo, id: "8", name: "Voopoo" },
+  { img: lostMary, id: "9", name: "LostMary" },
+  { img: blazySuzan, id: "10", name: "BlazySuzan" },
 ];
 
 export const FLAVOUR_DATA = [
@@ -183,6 +181,45 @@ export const SHOP_ITEM_DATA = [
     name: "Big Size Herb Grinder",
     id: "6",
     img: grinders,
+    price: "₦ 15,700",
+  },
+];
+
+export const FAVORITE_ITEMS_DATA = [
+  {
+    name: "VooPoo Argus P1 Pod Vape Kit",
+    id: "1",
+    img: voopooCart,
+    price: "₦ 15,700",
+  },
+  {
+    name: "Raw classic connoisseur 1 1/4 rolling papers with pre-rolled tips combo pack",
+    id: "4",
+    img: rawClassicCart,
+    price: "₦ 15,700",
+  },
+  {
+    name: "Big Size Herb Grinder",
+    id: "6",
+    img: grinders,
+    price: "₦ 15,700",
+  },
+  {
+    name: "Bic Black Gas Lighter",
+    id: "2",
+    img: bicBlackCart,
+    price: "₦ 15,700",
+  },
+  {
+    name: "Rizla - Silver Kingsize Slim Papers Combi Pack",
+    id: "3",
+    img: rizlaCart,
+    price: "₦ 15,700",
+  },
+  {
+    name: "Regular Size Pink Activated Carbon Filter Tips",
+    id: "5",
+    img: regularFilterCart,
     price: "₦ 15,700",
   },
 ];

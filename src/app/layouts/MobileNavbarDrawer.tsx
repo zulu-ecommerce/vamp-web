@@ -8,7 +8,6 @@ import NavGeneralSearch from "../components/NavGeneralSearch";
 interface MobileNavbarDrawerProps {
   openSideNav: boolean;
   setOpenSideNav: React.Dispatch<React.SetStateAction<boolean>>;
-  ref?: React.RefObject<HTMLDivElement>;
 }
 
 export const MobileNavbarDrawer = ({
@@ -48,9 +47,7 @@ export const DesktopNavbar = ({
           : "w-0 px-0"
       )}
     >
-      <div>
-        <NavGeneralSearch setOpenSideNav={setOpenSideNav} />
-      </div>
+      <NavGeneralSearch setOpenSideNav={setOpenSideNav} />
     </div>
   );
 };
