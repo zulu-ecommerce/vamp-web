@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container lg:flex lg:justify-between py-10 bg-white-3 lg:bg-white">
+      <section className="container lg:flex lg:justify-between py-32 bg-white-3 lg:bg-white">
         <div className="lg:w-[415px]">
           <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
             SHOP YOUR FAVORITE BRANDS
@@ -118,7 +118,7 @@ export default function Home() {
         </Button>
       </section>
       <section className="bg-primary">
-        <div className="container text-white py-10">
+        <div className="container text-white pt-20 pb-10">
           <p className="bg-gray-3 font-bold px-3 rounded py-1 text-[13px] w-fit">
             EXPERIENCE UNIQUE FLAVORS
           </p>
@@ -131,13 +131,13 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className="bg-primary pb-10">
+      <section className="bg-primary pb-20">
         <div className="2xl:max-w-[1240px] 2xl:mx-auto">
           <FlavourCarousel />
         </div>
       </section>
       <section className="bg-white-3">
-        <div className=" container py-10 lg:flex lg:items-start lg:justify-between lg:gap-10">
+        <div className=" container py-32 lg:flex lg:items-start lg:justify-between lg:gap-10">
           <div className="lg:sticky lg:top-24">
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
               GET IT All IN ONE BIG HOUSE
@@ -174,7 +174,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-white-3">
-        <div className="container py-10 lg:flex lg:items-start lg:gap-10 lg:justify-between">
+        <div className="container py-32 lg:flex lg:items-start lg:gap-10 lg:justify-between">
           <div className="">
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
               LOCATED IN THE HEART OF LAGOS
@@ -213,7 +213,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className=" bg-white-3 py-10">
+      <section className=" bg-white-3 py-20">
         <div className="container lg:flex lg:items-center lg:justify-between">
           <div>
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
