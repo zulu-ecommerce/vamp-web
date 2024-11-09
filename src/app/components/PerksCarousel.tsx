@@ -44,10 +44,7 @@ export const PerksSection = () => {
   return (
     <section className="py-10 container grid grid-cols-3 gap-4">
       {PERKS_DATA?.map((card, index) => (
-        <div
-          key={card.id}
-          className={clsx("rounded-lg")}
-        >
+        <div key={card.id} className={clsx("rounded-lg")}>
           <div className=" bg-white-2 py-6 px-6 rounded min-h-[210px]">
             <Image src={card.icon} alt="icon" className="max-w-[24px] h-auto" />
             <p className="text-[20px] font-bold mt-4">{card.title}</p>

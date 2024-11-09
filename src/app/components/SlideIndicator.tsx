@@ -3,9 +3,11 @@
 import React from "react";
 import clsx from "clsx";
 
-const SlideIndicator = () => {
-  const [activeSlide, setActiveSlide] = React.useState(1);
-  const slides = [1, 2];
+interface SlideIndicatorProps {
+  activeIndex: number;
+}
+const SlideIndicator = ({ activeIndex }: SlideIndicatorProps) => {
+  const slides = [0, 1];
 
   return (
     <div className="flex items-center gap-1">
@@ -14,7 +16,7 @@ const SlideIndicator = () => {
           <div
             className={clsx(
               "h-[5px] rounded-[1px] transition-all duration-500",
-              activeSlide === slide
+              activeIndex === slide
                 ? "bg-black w-[65px]"
                 : "bg-black/10 w-[26px]"
             )}

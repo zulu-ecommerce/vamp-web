@@ -8,80 +8,19 @@ import {
   PRODUCT_DISPLAY,
   SHOP_ITEM_DATA,
 } from "../utils/constants";
-import { PerksCarousel, PerksSection } from "../components/PerksCarousel";
 import { Button } from "../components/elements/Button";
-import MinimalCard from "../components/MinimalCard";
 
 import locationColored from "../../../public/assets/icons/locationColored.svg";
-import trophy from "../../../public/assets/icons/trophy.png";
+import HeroCarousel from "../features/cart/components/HeroCarousel";
 import FlavourCarousel from "../components/FlavourCarousel";
-import SlideIndicator from "../components/SlideIndicator";
 
 export default function Home() {
   return (
     <div>
-      <section className="bg-gradient-to-b from-[#F6EDEA] to-[#DFEBE9]">
-        <div className="container pt-12 flex flex-col gap=10 lg:flex-row items-start justify-between">
-          <div className="lg:w-[691px]">
-            <h1 className="text-[100px] lg:text-[215px] 2xs:text-[120px] leading-[105px] lg:leading-[172px] mx-auto">
-              SMOKE LIKE ROYALTY.
-            </h1>
-            <p className="text-[24px] hidden lg:block text-primary mt-6 lg:w-[668px]">
-              Smoke With Luxury and Quality Products
-            </p>
-            <p className="hidden lg:block text-gray-4 mt-4 w-[513px]">
-              We aim at providing you with the smoking experience that you
-              solely deserve. Explore our catalogue of your favorite smoking
-              accessories.
-            </p>
-            <Button className="text-base w-[506px] font-bold hidden lg:flex items-center mt-6 justify-between">
-              See more products{" "}
-              <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
-            </Button>
-          </div>
-          <p className="text-[24px] lg:hidden text-primary mt-6 lg:w-[668px]">
-            Smoke With Luxury and Quality Products
-          </p>
-          <div className="grid grid-cols-2 gap-[18px] mt-8 lg:mt-0 w-full lg:w-[395px]">
-            {PRODUCT_DISPLAY.map((product) => (
-              <MinimalCard
-                id={product.id}
-                key={product.id}
-                name={product.name}
-                img={product.image}
-              />
-            ))}
-          </div>
-          <p className="text-[13px] lg:hidden text-gray-4 mt-4 md:w-[668px] mx-auto">
-            We aim at providing you with the smoking experience that you solely
-            deserve. Explore our catalogue of your favorite smoking accessories.
-          </p>
-          <Button className="text-base w-full font-bold flex lg:hidden items-center mt-6 justify-between">
-            See more products{" "}
-            <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
-          </Button>
-        </div>
-        <div className="mt-14 lg:mt-4">
-          <div className="container flex items-center justify-between">
-            <div className="flex items-center gap-4 my-6 justify-center lg:justify-start">
-              <Image src={trophy} alt="line" className="max-w-[24px]" />
-              <h2 className="font-neutrif font-normal">
-                Nigeria’s No1. Smoke Shop
-              </h2>
-            </div>
-            <SlideIndicator />
-          </div>
-          <div className="bg-white-3 lg:bg-transparent py-10">
-            <div className="lg:hidden">
-              <PerksCarousel />
-            </div>
-            <div className="hidden lg:block">
-              <PerksSection />
-            </div>
-          </div>
-        </div>
+      <section className="bg-[#F4F4F4]">
+        <HeroCarousel />
       </section>
-      <section className="container lg:flex lg:justify-between py-32 bg-white-3 lg:bg-white">
+      <section className="container lg:flex lg:justify-between py-10 sm:py-32 bg-white-3 lg:bg-white">
         <div className="lg:w-[415px]">
           <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
             SHOP YOUR FAVORITE BRANDS
@@ -137,7 +76,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-white-3">
-        <div className=" container py-32 lg:flex lg:items-start lg:justify-between lg:gap-10">
+        <div className=" container py-10 sm:py-32 lg:flex lg:items-start lg:justify-between lg:gap-10">
           <div className="lg:sticky lg:top-24">
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
               GET IT All IN ONE BIG HOUSE
@@ -154,7 +93,7 @@ export default function Home() {
               <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
             </Button>
           </div>
-          <div className="grid grid-cols-1 2xs:grid-cols-2 2xl:grid-cols-3 mt-6 lg:mt-0 gap-4 lg:w-[563px]">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 mt-6 lg:mt-0 gap-4 lg:w-[563px]">
             {SHOP_ITEM_DATA.map((item) => {
               return (
                 <ShopItemCard
@@ -174,7 +113,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-white-3">
-        <div className="container py-32 lg:flex lg:items-start lg:gap-10 lg:justify-between">
+        <div className="container py-10 sm:py-32 lg:flex lg:items-start lg:gap-10 lg:justify-between">
           <div className="">
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
               LOCATED IN THE HEART OF LAGOS

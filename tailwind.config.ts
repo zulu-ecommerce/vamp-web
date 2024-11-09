@@ -11,6 +11,7 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "vamp-gradient": "linear-gradient(to bottom, #F6EDEA, #DFEBE9)",
+        "slide-bg": "url('/assets/images/slide-bg.svg')",
       },
       fontFamily: {
         neutrif: "var(--font-neutrif-studio)", // Using a CSS variable
