@@ -1,18 +1,19 @@
 "use client";
+import { Mousewheel, Keyboard } from "swiper/modules";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import Image from "next/image";
 import React from "react";
+import clsx from "clsx";
 
+import { PerksCarousel, PerksSection } from "@/app/components/PerksCarousel";
+import hero2Img from "../../../../../public/assets/images/hero2Img.webp";
+import trophy from "../../../../../public/assets/icons/trophy.png";
+import SlideIndicator from "@/app/components/SlideIndicator";
 import { Button } from "@/app/components/elements/Button";
 import { PRODUCT_DISPLAY } from "@/app/utils/constants";
 import MinimalCard from "@/app/components/MinimalCard";
 
-import hero2Img from "../../../../../public/assets/images/hero2Img.webp";
-import Image from "next/image";
-import { SwiperSlide, Swiper } from "swiper/react";
-import clsx from "clsx";
-import { Autoplay } from "swiper/modules";
-import SlideIndicator from "@/app/components/SlideIndicator";
-import { PerksCarousel, PerksSection } from "@/app/components/PerksCarousel";
-import trophy from "../../../../../public/assets/icons/trophy.png";
 
 const HeroCarousel = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -39,29 +40,33 @@ const HeroCarousel = () => {
     },
   ];
 
-  console.log(activeIndex);
-
   return (
     <div
       className={clsx(
         "transition-all",
-        activeIndex === 0 ? "bg-auto" : "bg-slide-bg bg-no-repeat bg-cover bg-center"
+        activeIndex === 0
+          ? "bg-auto"
+          : "bg-slide-bg bg-no-repeat bg-cover bg-center"
       )}
     >
       <Swiper
         rewind={false}
+        spaceBetween={20}
+        cssMode={true}
+        mousewheel={true}
+        keyboard={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]}
+        modules={[Autoplay, Mousewheel, Keyboard]}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         className="mySwiper container"
       >
         {CAROUSEL_DATA.map((data, index) => {
           return (
             <SwiperSlide className="pt-12" key={data.id}>
-              <div className="flex flex-col container lg:gap-10 lg:flex-row items-start justify-between w-full">
+              <div className="flex flex-col px-4 xs:px-[30px] xl:px-0 lg:gap-10 lg:flex-row items-start justify-between w-full">
                 <div className="">
                   {index === 1 && (
                     <p className="bg-black/5 font-bold px-3 rounded py-1 text-[13px] w-fit">
@@ -73,12 +78,12 @@ const HeroCarousel = () => {
                       "",
                       index === 1
                         ? "text-[70px] mt-10 sm:mt-auto xs:text-[80px] xs:leading-[82px] leading-[79px] sm:text-[120px] sm:leading-[120px] 2xl:w-[621px]"
-                        : "text-[100px] lg:text-[215px] 2xs:text-[120px] leading-[105px] lg:leading-[172px] 2xl:w-[691px] mx-auto"
+                        : "text-[100px] leading-[95px] xs:text-[150px] xs:leading-[125px] lg:text-[140px] lg:leading-[120px] xl:text-[215px] 2xs:text-[120px] xl:leading-[172px] lg:w-[500px] xl:w-[691px]"
                     )}
                   >
                     {data.title}
                   </h1>
-                  <p className="text-[20px] sm:text-[24px] hidden lg:block text-primary mt-6 lg:w-[668px]">
+                  <p className="text-[20px] sm:text-[24px] hidden lg:block text-primary mt-6 w-[500px] xl:w-[668px]">
                     {data.description}
                   </p>
                   <p className="hidden lg:block text-gray-4 mt-4 w-[513px]">

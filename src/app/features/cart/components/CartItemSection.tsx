@@ -9,6 +9,6 @@ const CartItemSection = ({ children }: CartItemSectionProps) => {
       {children}
     </div>
   );
-};
+}
 
 export default CartItemSection;

@@ -69,5 +69,52 @@ body {
   object-fit: cover;
 }
 
+.leaflet-tooltip {
+  background-color: transparent !important; /* Custom background color */
+  color: red !important;
+  font-size: 14px;
+  font-weight: bold;
+  border: none !important;
 
+}
 
+.leaflet-tooltip-content {
+  margin: 0; /* Remove any additional margins */
+}
+.leaflet-control-attribution {
+  display: none;
+}
+
+.ribbon {
+  animation: animate 45s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.ribbon-container:hover .ribbon {
+  animation-play-state: paused;
+}
+
+.card-container {
+  animation: animate2 48s linear infinite;
+}
+
+.overall-card-container:hover .card-container {
+  animation-play-state: paused;
+}

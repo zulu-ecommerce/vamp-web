@@ -133,9 +133,14 @@ export const Navbar = () => {
             <button
               onClick={handleOpenProfileModal}
               type="button"
-              className="flex centered gap-4 rounded-full"
+              className="flex centered gap-4 rounded-full relative"
             >
               <Profile size={24} color="#FAFAFA" variant="Bold" />
+              <ProfileDrawerModal
+                handleClose={() => setOpenProfileModal(false)}
+                modalOpen={openProfileModal}
+                modalRef={profileButtonRef}
+              />
             </button>
           </div>
           {/* mobile navbar */}
@@ -144,12 +149,6 @@ export const Navbar = () => {
             setOpenSideNav={setOpenDesktopNav}
           />
         </div>
-
-        <ProfileDrawerModal
-          handleClose={() => setOpenProfileModal(false)}
-          modalOpen={openProfileModal}
-          modalRef={profileButtonRef}
-        />
         <MobileNavbarDrawer
           openSideNav={openSideNav}
           setOpenSideNav={setOpenSideNav}

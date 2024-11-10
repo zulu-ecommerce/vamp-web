@@ -22,6 +22,7 @@ const ProfileDrawerModal = ({
       modalOpen={modalOpen}
       modalRef={modalRef}
       title="Profile"
+      className="sm:!w-[428px] sm:!left-[-410px]"
     >
       <div className="px-6 flex items-center py-5 gap-4">
         <div className="w-10 min-w-[40px] bg-black aspect-square rounded-full centered">

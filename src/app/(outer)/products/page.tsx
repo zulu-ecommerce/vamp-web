@@ -75,12 +75,12 @@ const Products = () => {
           {search}
         </h1>
       </section>
-      <section className="container">
-        <div className="flex items-center justify-between pt-4">
+      <section className="container md:relative">
+        <div className="flex items-center justify-between pt-4 sticky top-24">
           <p className="text-[13px] font-bold bg-[#EBEBEB] px-2 py-1 text-black rounded-[5px]">
             500 PRODUCTS
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 relative">
             <button
               onClick={handleClickOnBrandFilterButton}
               type="button"
@@ -95,22 +95,25 @@ const Products = () => {
             >
               PRICE
             </button>
+            <BrandFilter
+              handleClose={() => setIsBrandFilterVisible(false)}
+              modalOpen={isBrandFilterVisible}
+              modalRef={brandFilterRef}
+              handleBrandFilter={handleBrandFilter}
+              brandFilterArray={brandFilterArray}
+            />
+            <PriceFilter
+              handleClose={() => setIsPriceFilterVisible(false)}
+              modalOpen={isPriceFilterVisible}
+              modalRef={priceFilterRef}
+            />
           </div>
         </div>
         <ProductSection />
+        <ProductSection />
+        <ProductSection />
+        <ProductSection />
       </section>
-      <BrandFilter
-        handleClose={() => setIsBrandFilterVisible(false)}
-        modalOpen={isBrandFilterVisible}
-        modalRef={brandFilterRef}
-        handleBrandFilter={handleBrandFilter}
-        brandFilterArray={brandFilterArray}
-      />
-      <PriceFilter
-        handleClose={() => setIsPriceFilterVisible(false)}
-        modalOpen={isPriceFilterVisible}
-        modalRef={priceFilterRef}
-      />
     </div>
   );
 };

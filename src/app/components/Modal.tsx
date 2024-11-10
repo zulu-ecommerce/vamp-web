@@ -4,7 +4,6 @@ import {
   Variants,
   VariantLabels,
 } from "framer-motion";
-import { RemoveScroll } from "react-remove-scroll";
 import FocusLock from "react-focus-lock";
 import ReactDOM from "react-dom";
 import React from "react";
@@ -104,33 +103,31 @@ export const Modal: React.FC<ModalProps> = ({
     <AnimatePresence onExitComplete={closeModal}>
       {showDialog && (
         <FocusLock>
-          <RemoveScroll>
-            <motion.div
-              variants={backdropVariants}
-              initial="hidden"
-              animate="visible"
-              exit={backdropVariants.hidden}
-              className={clsx(
-                "fixed inset-0 z-[500] overflow-y-auto",
-                backDropClass
-              )}
-            >
-              <div className="fixed inset-0 overflow-y-auto overflow-x-hidden">
-                <motion.div
-                  className={clsx(
-                    "",
-                    variant === "middle" && "sm:mt-20",
-                    className
-                  )}
-                  variants={animationVariants}
-                  exit={exitVariants}
-                  ref={modalRef}
-                >
-                  {children}
-                </motion.div>
-              </div>
-            </motion.div>
-          </RemoveScroll>
+          <motion.div
+            variants={backdropVariants}
+            initial="hidden"
+            animate="visible"
+            exit={backdropVariants.hidden}
+            className={clsx(
+              "fixed inset-0 z-[500] overflow-y-auto",
+              backDropClass
+            )}
+          >
+            <div className="fixed inset-0 overflow-y-auto overflow-x-hidden">
+              <motion.div
+                className={clsx(
+                  "",
+                  variant === "middle" && "sm:mt-20",
+                  className
+                )}
+                variants={animationVariants}
+                exit={exitVariants}
+                ref={modalRef}
+              >
+                {children}
+              </motion.div>
+            </div>
+          </motion.div>
         </FocusLock>
       )}
     </AnimatePresence>,

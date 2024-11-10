@@ -32,7 +32,7 @@ const config: Config = {
         },
         red: "#E34149",
         yellow: "#F3CD58",
-        green: "#2CB864",
+        green: "#449B4C",
       },
       borderColor: {
         DEFAULT: "#E3E0DE",

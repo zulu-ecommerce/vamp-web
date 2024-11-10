@@ -13,14 +13,19 @@ import { Button } from "../components/elements/Button";
 import locationColored from "../../../public/assets/icons/locationColored.svg";
 import HeroCarousel from "../features/cart/components/HeroCarousel";
 import FlavourCarousel from "../components/FlavourCarousel";
+import LocationMap from "../components/map/LocationMap";
+import {
+  InfinitySection,
+  InfinitySection2,
+} from "../components/InfinitySection";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <section className="bg-[#F4F4F4]">
         <HeroCarousel />
       </section>
-      <section className="container lg:flex lg:justify-between py-10 sm:py-32 bg-white-3 lg:bg-white">
+      <section className="container lg:flex lg:justify-between py-10 sm:py-36 bg-white-3 lg:bg-white">
         <div className="lg:w-[415px]">
           <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
             SHOP YOUR FAVORITE BRANDS
@@ -113,7 +118,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-white-3">
-        <div className="container py-10 sm:py-32 lg:flex lg:items-start lg:gap-10 lg:justify-between">
+        <div className="container py-10 sm:py-32 lg:flex lg:items-stretch lg:gap-10 lg:justify-between">
           <div className="">
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
               LOCATED IN THE HEART OF LAGOS
@@ -128,16 +133,21 @@ export default function Home() {
               smoking accessories!
             </p>
           </div>
-          <div className="bg-gray-7 w-full lg:w-[558px] rounded px-6 py-6 mt-10 border border-gray-6">
-            <div className="h-[201px]" />
-            <div className="bg-white rounded p-6">
+          <div className="bg-gray-7 w-full lg:w-[558px] h-[500px] mt-8 lg:mt-0 lg:h-auto rounded-[10px] overflow-hidden">
+            <LocationMap />
+            <div className="rounded bg-white w-[90%] mx-auto z-[12] p-4 -mt-[220px] relative group">
               <div className="bg-green rounded flex items-center gap-4 w-fit px-2 py-1">
                 <Location color="#FAFAFA" size={14} variant="Bold" />
                 <p className="text-[13px] text-white">Admiralty Mall, Shop 2</p>
               </div>
-              <p className="text-[20px] font-bold my-2">Vamp Shop, Lekki</p>
+              <p className="text-[20px] font-bold my-1">Vamp Shop, Lekki</p>
               <p className="text-gray-4 text-[13px]">Open Monday - Sunday</p>
-              <Button className="text-base w-full pl-2 font-medium flex items-center mt-8 justify-between">
+              <Button
+                as="link"
+                target="_blank"
+                href="https://www.google.com/maps/place/Vamp/@6.4478113,3.4675068,17z/data=!4m7!3m6!1s0x103bf5467664fe95:0x6671f321a6a245bc!4b1!8m2!3d6.4478113!4d3.4700817!16s%2Fg%2F11v459v7tq?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
+                className="text-base w-full pl-2 !h-[50px] font-medium flex items-center mt-8 justify-between"
+              >
                 <Image
                   src={locationColored}
                   className="w-[35px] h-auto"
@@ -145,7 +155,11 @@ export default function Home() {
                 />
                 <div className="flex items-center gap-4">
                   <p> View on Map</p>
-                  <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
+                  <img
+                    src="/assets/icons/whiteArrow.svg"
+                    alt="arrowRight"
+                    className="group-hover:translate-x-2 transition"
+                  />
                 </div>
               </Button>
             </div>
@@ -180,6 +194,10 @@ export default function Home() {
             </button>
           </div>
         </div>
+      </section>
+      <section className="py-4 sm:py-6">
+        <InfinitySection />
+        <InfinitySection2 />
       </section>
     </div>
   );
