@@ -110,9 +110,6 @@ const Products = () => {
           </div>
         </div>
         <ProductSection />
-        <ProductSection />
-        <ProductSection />
-        <ProductSection />
       </section>
     </div>
   );

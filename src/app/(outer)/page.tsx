@@ -98,7 +98,7 @@ export default function Home() {
               <img src="/assets/icons/whiteArrow.svg" alt="arrowRight" />
             </Button>
           </div>
-          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 mt-6 lg:mt-0 gap-4 lg:w-[563px]">
+          <div className="grid grid-cols-1 2xs:grid-cols-2 sm:grid-cols-3 mt-6 lg:mt-0 gap-4 lg:w-[563px]">
             {SHOP_ITEM_DATA.map((item) => {
               return (
                 <ShopItemCard
@@ -117,7 +117,7 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <section className="bg-white-3">
+      <section className="bg-white-2">
         <div className="container py-10 sm:py-32 lg:flex lg:items-stretch lg:gap-10 lg:justify-between">
           <div className="">
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
@@ -166,7 +166,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className=" bg-white-3 py-20">
+      <section className=" bg-white-2 py-20">
         <div className="container lg:flex lg:items-center lg:justify-between">
           <div>
             <p className="bg-[#EBEBEB] font-bold px-3 rounded py-1 text-[13px] w-fit">
@@ -195,7 +195,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-4 sm:py-6">
+      <section className="py-4 sm:py-6 bg-white-2">
         <InfinitySection />
         <InfinitySection2 />
       </section>

@@ -1,9 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 import ProductDetailsQuantity from "@/app/features/products/components/ProductDetailsQuantity";
-import ProductImageSection from "@/app/features/products/components/ProductImageSection";
+import ProductDetailCard from "@/app/features/products/components/ProductDetailCard";
 import voopoo from "../../../../../public/assets/images/voopoo.svg";
 
 const Page = () => {
@@ -20,20 +19,7 @@ const Page = () => {
   return (
     <div className="bg-white relative sm:pt-10 sm:pb-10">
       <div className="flex flex-col sm:flex-row sm:max-w-[1240px] sm:mx-auto">
-        <div className="py-6 bg-white-2 border border-black/5 lg:min-w-[571px] px-6">
-          <div className="flex items-center justify-between px-4">
-            <button
-              type="button"
-              className="w-[38px] min-w-[38px] centered aspect-square rotate-180 rounded-full border border-gray-7 bg-white-2"
-            >
-              <img src="/assets/icons/arrowRight.svg" alt="arrowRight" />
-            </button>
-            <Link href="/product" className="w-6 h-6" type="button">
-              <img src="/assets/icons/heart.svg" alt="arrowRight" />
-            </Link>
-          </div>
-          <ProductImageSection />
-        </div>
+        <ProductDetailCard />
         <div className="bg-white-3 py-4 lg:px-8">
           <div className="container">
             <div className="p-1 rounded-md border border-primary w-fit">

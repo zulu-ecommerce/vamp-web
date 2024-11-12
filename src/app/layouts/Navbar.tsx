@@ -130,18 +130,20 @@ export const Navbar = () => {
                 </button>
               );
             })}
-            <button
-              onClick={handleOpenProfileModal}
-              type="button"
-              className="flex centered gap-4 rounded-full relative"
-            >
-              <Profile size={24} color="#FAFAFA" variant="Bold" />
+            <div className="relative">
+              <button
+                onClick={handleOpenProfileModal}
+                type="button"
+                className="flex centered gap-4 rounded-full "
+              >
+                <Profile size={24} color="#FAFAFA" variant="Bold" />
+              </button>
               <ProfileDrawerModal
                 handleClose={() => setOpenProfileModal(false)}
                 modalOpen={openProfileModal}
                 modalRef={profileButtonRef}
               />
-            </button>
+            </div>
           </div>
           {/* mobile navbar */}
           <DesktopNavbar
