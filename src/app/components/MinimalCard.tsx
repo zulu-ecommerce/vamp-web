@@ -9,7 +9,7 @@ interface MinimalCardProps {
 const MinimalCard = ({ name, img }: MinimalCardProps) => {
   return (
     <div className="rounded bg-white-2 aspect-square overflow-hidden relative max-w-[300px] p-3">
-      <p className="text-[20px] relative z-[1] mt-1 px-2 font-semibold">
+      <p className="text-base relative z-[1] mt-1 px-2 font-normal">
         {name}
       </p>
       <Image

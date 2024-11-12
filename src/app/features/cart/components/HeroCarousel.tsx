@@ -53,10 +53,11 @@ const HeroCarousel = () => {
         rewind={false}
         spaceBetween={20}
         cssMode={true}
+        loop={true}
         mousewheel={true}
         keyboard={true}
         autoplay={{
-          delay: 2500,
+          delay: 8500,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Mousewheel, Keyboard]}

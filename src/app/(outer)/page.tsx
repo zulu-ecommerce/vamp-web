@@ -5,7 +5,6 @@ import React from "react";
 import ShopItemCard from "../features/shop/components/ShopItemCard";
 import {
   FAVORITE_BRANDS,
-  PRODUCT_DISPLAY,
   SHOP_ITEM_DATA,
 } from "../utils/constants";
 import { Button } from "../components/elements/Button";
@@ -76,7 +75,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-primary pb-20">
-        <div className="2xl:max-w-[1240px] 2xl:mx-auto">
+        <div className="container">
           <FlavourCarousel />
         </div>
       </section>

@@ -18,6 +18,7 @@ const Products = () => {
     isComponentVisible: isPriceFilterVisible,
     setIsComponentVisible: setIsPriceFilterVisible,
     handleClickOnDropDownButton: handleClickOnPriceFilterButton,
+    dropDownButtonRef: priceFilterDropDownButtonRef,
   } = useComponentVisible();
 
   const {
@@ -25,6 +26,7 @@ const Products = () => {
     isComponentVisible: isBrandFilterVisible,
     setIsComponentVisible: setIsBrandFilterVisible,
     handleClickOnDropDownButton: handleClickOnBrandFilterButton,
+    dropDownButtonRef: brandFilterDropDownButtonRef,
   } = useComponentVisible();
 
   const FILTER_TAGS = [
@@ -82,6 +84,7 @@ const Products = () => {
           </p>
           <div className="flex items-center gap-4 relative">
             <button
+              ref={brandFilterDropDownButtonRef}
               onClick={handleClickOnBrandFilterButton}
               type="button"
               className="underline underline-offset-2 text-[13px] text-black"
@@ -89,6 +92,7 @@ const Products = () => {
               BRAND
             </button>
             <button
+              ref={priceFilterDropDownButtonRef}
               onClick={handleClickOnPriceFilterButton}
               type="button"
               className="underline underline-offset-2 text-[13px] text-black"
